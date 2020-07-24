@@ -8,9 +8,9 @@ const schema = yup.object().shape({
   size: yup
     .string()
     .oneOf(['small', 'medium', 'large'], "Please choose a size"),
-  toppings: yup
-    .string()
-    .oneOf(['tl', 'instructor', 'alumni', 'student'], "Role is required")
+  comments: yup
+    .mixed()
+    .notRequired(100, 'Optional'),
 })
 
 export default schema
