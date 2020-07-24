@@ -6,6 +6,9 @@ import schema from './schema'
 import Pizza from './Pizza'
 import Home from './Home'
 import OrderForm from './OrderForm'
+import styled from 'styled-components';
+
+
 
 const initialOrders = [];
 const initialDisabled = true;
@@ -99,29 +102,44 @@ const App = () => {
 
   return (
     <div>
-      <h1>Lambda Eats</h1>
-      <div>
+      <StyledHeader className="container">
+        <h3>Lambda Eats</h3>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/pizza">Order</Link>
+          <Link className="links" to="/">Home</Link>
+          <Link className="links" to="/pizza">Order</Link>
         </nav>
-        <Switch>
-          <Route path="/pizza">
-              <OrderForm 
-                values={formValues}
-                inputChange={inputChange}
-                checkboxChange={checkboxChange}
-                submit={submit}
-                disabled={disabled}
-                errors={formErrors} />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+      </StyledHeader>
+      <Switch>
+        <Route path="/pizza">
+          <OrderForm
+            values={formValues}
+            inputChange={inputChange}
+            checkboxChange={checkboxChange}
+            submit={submit}
+            disabled={disabled}
+            errors={formErrors} />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 };
 
 export default App;
+
+const StyledHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  nav {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .links {
+    text-decoration: none;
+    justify-content: space-between;
+    margin: 5%;
+  }
+`
