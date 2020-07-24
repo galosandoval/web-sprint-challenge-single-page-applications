@@ -1,4 +1,5 @@
 import React from 'react'
+import Pizza from './Pizza'
 
 export default function OrderForm(props) {
   const {
@@ -8,6 +9,7 @@ export default function OrderForm(props) {
     checkboxChange,
     disabled,
     errors,
+    order,
   } = props
 
   const onSubmit = evt => {
@@ -25,7 +27,7 @@ export default function OrderForm(props) {
     inputChange(name, value)
   }
 
-  
+
 
   return (
     <form className='form container' onSubmit={onSubmit}>
@@ -112,6 +114,13 @@ export default function OrderForm(props) {
             onChange={onCheckboxChange}
           />
         </label>
+        {
+        order.map(za => {
+          return (
+            <Pizza key={za.id} details={za} />
+          )
+        })
+      }
       </div>
     </form>
   )

@@ -117,7 +117,8 @@ const App = () => {
             checkboxChange={checkboxChange}
             submit={submit}
             disabled={disabled}
-            errors={formErrors} />
+            errors={formErrors}
+            order={order} />
         </Route>
         <Route path="/">
           <Home />
