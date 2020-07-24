@@ -25,10 +25,12 @@ export default function OrderForm(props) {
     inputChange(name, value)
   }
 
+  
+
   return (
     <form className='form container' onSubmit={onSubmit}>
       <div className='form-group submit'>
-        <h2>Order your own customizable pizza</h2>
+        <h2>Build Your Own Pizza</h2>
         <button disabled={disabled}>submit</button>
 
         <div className='errors'>

@@ -9,7 +9,7 @@ const Home = (props) => {
       <div className="text-container">
         <div>
           <h3>Your Favorite Food Delivered While Coding</h3>
-          <Link className="links" to="/pizza">Pizza?</Link>
+          <Link id="links" to="/pizza">Pizza?</Link>
         </div>
         <Route path="/pizza">
           <OrderForm/>
